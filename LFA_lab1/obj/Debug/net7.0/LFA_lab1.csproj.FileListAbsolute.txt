@@ -1,0 +1,15 @@
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\bin\Debug\net7.0\LFA_lab1.exe
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\bin\Debug\net7.0\LFA_lab1.deps.json
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\bin\Debug\net7.0\LFA_lab1.runtimeconfig.json
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\bin\Debug\net7.0\LFA_lab1.dll
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\bin\Debug\net7.0\LFA_lab1.pdb
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.csproj.AssemblyReference.cache
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.AssemblyInfoInputs.cache
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.AssemblyInfo.cs
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.csproj.CoreCompileInputs.cache
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.dll
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\refint\LFA_lab1.dll
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.pdb
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\LFA_lab1.genruntimeconfig.cache
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab1\obj\Debug\net7.0\ref\LFA_lab1.dll
