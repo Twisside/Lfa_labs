@@ -45,7 +45,7 @@ public class FiniteAutomaton
         }
 
         // Check if the final state is an accepting state
-        Console.WriteLine("huraaayyy!");
+        
         return F.Contains(currentState);
     }
 }

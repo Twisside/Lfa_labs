@@ -55,9 +55,10 @@ public class Grammar
     {
         // Convert Grammar to Finite Automaton
         HashSet<char> Q = new HashSet<char>(VN); // States
+        
         Q.UnionWith(VT);
         char q0 = S; // Initial state
-        HashSet<char> F = new HashSet<char> { S }; // Accepting states
+        HashSet<char> F = new HashSet<char>(Q); // Accepting states
 
         Dictionary<(char, char), char> delta = new Dictionary<(char, char), char>(); // Transition function
         foreach (var entry in P)
