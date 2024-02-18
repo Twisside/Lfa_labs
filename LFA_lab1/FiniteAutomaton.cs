@@ -17,18 +17,21 @@ public class FiniteAutomaton
         F = f;
     }
 
+    
     public bool StringBelongToLanguage(string inputString)
     {
         char currentState = q0;
 
         foreach (char symbol in inputString)
         {
+            // Check if the symbol belongs to the alphabet
             if (!Sigma.Contains(symbol))
             {
                 // Symbol not in alphabet
                 return false;
             }
 
+            // Check if there exists a transition for the current state and symbol
             if (delta.ContainsKey((currentState, symbol)))
             {
                 // Transition exists, move to next state
@@ -36,12 +39,13 @@ public class FiniteAutomaton
             }
             else
             {
-                // No transition for this symbol
+                // No transition for this symbol, string does not belong to language
                 return false;
             }
         }
 
         // Check if the final state is an accepting state
+        Console.WriteLine("huraaayyy!");
         return F.Contains(currentState);
     }
 }

@@ -28,7 +28,7 @@ public class Lab1
         FiniteAutomaton fa = grammar.ToFiniteAutomaton();
 
         // Example usage: Check if a string belongs to the language of the FA
-        string inputString = "abaabb";
+        string inputString = "abaaabaaaaabaaaaaaaa";
         bool belongs = fa.StringBelongToLanguage(inputString);
         Console.WriteLine($"Does '{inputString}' belong to the language? {belongs}");
     }

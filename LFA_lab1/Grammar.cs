@@ -66,11 +66,19 @@ public class Grammar
             foreach (var expansion in entry.Value)
             {
                 char inputSymbol = expansion[0];
+                char toState;
                 if (expansion.Length > 1)
                 {
-                    char toState = expansion[1];
-                    delta[(fromState, inputSymbol)] = toState;
+                    toState = expansion[1];
                 }
+                else
+                {
+                    // If the expansion has only one symbol, it's a terminal symbol,
+                    // so we create a new state to represent it
+                    toState = inputSymbol;
+                    Q.Add(toState);
+                }
+                delta[(fromState, inputSymbol)] = toState;
             }
         }
 
