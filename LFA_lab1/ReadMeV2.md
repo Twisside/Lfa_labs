@@ -157,6 +157,5 @@ public bool StringBelongToLanguage(string inputString)
 ```
 
 ## Conclusions / Screenshots / Results
-![img.png](img.png)
 
 In conclusion the objective of the laboratory work was achieved. We implemented a type/class for our grammar, added a function that generates 5 valid strings from the language expressed by our given grammar, implemented some functionality that converts and object of type Grammar to one of type Finite Automaton and for the Finite Automaton, we added a method that checks if an input string can be obtained via the state transition from it.
