@@ -55,7 +55,6 @@ public class Grammar
     {
         // Convert Grammar to Finite Automaton
         HashSet<char> Q = new HashSet<char>(VN); // States
-        
         Q.UnionWith(VT);
         char q0 = S; // Initial state
         HashSet<char> F = new HashSet<char>(Q); // Accepting states
@@ -66,16 +65,16 @@ public class Grammar
             char fromState = entry.Key;
             foreach (var expansion in entry.Value)
             {
-                char inputSymbol = expansion[0];
+                char inputSymbol = expansion[0]; // x => !x.Any(char.IsUpper) // i don't know how to write this
                 char toState;
-                if (expansion.Length > 1)
+                if (expansion.Length > 1) // .Any(char.IsUpper) would be better but we run out of time
                 {
-                    toState = expansion[1];
+                    toState = expansion[1]; // x => x.Any(char.IsUpper) not the correct way to write but the logic is there
                 }
-                else
+                else // it has issues i know
                 {
                     // If the expansion has only one symbol, it's a terminal symbol,
-                    // so we create a new state to represent it
+                    // so we create a new state to represent it // messy but works for my variant
                     toState = inputSymbol;
                     Q.Add(toState);
                 }
