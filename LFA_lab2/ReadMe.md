@@ -1,65 +1,26 @@
-﻿
-namespace LFA_lab2
-{
-    public class FiniteAutomaton
-    {
-        public HashSet<char> Q {get; set;}  
-        // States
-        public HashSet<char> Sigma { get; set; } // Alphabet
-        public Dictionary<(char, char), HashSet<char>> delta { get; set; } // Transition function
-        public char q0 { get; set; } // Initial state
-        public HashSet<char> F { get; set; } // Accepting states
+﻿# Grammar and Finite Automaton Conversion
 
-        public FiniteAutomaton(HashSet<char> q, HashSet<char> sigma, Dictionary<(char, char), HashSet<char>> d, char q0, HashSet<char> f)
-        {
-            Q = q;
-            Sigma = sigma;
-            delta = d;
-            this.q0 = q0;
-            F = f;
-        }
+### Overview
+This project implements the conversion of a finite automaton (FA) to a regular grammar, determines whether the FA is deterministic or non-deterministic, and provides functionality to convert a non-deterministic finite automaton (NFA) to a deterministic finite automaton (DFA).
 
+### Theory
+Languages are sets of strings defined by rules, and grammars provide a systematic way to generate these strings. A finite automaton is a mathematical model used to recognize languages by processing strings of symbols according to predefined rules.
 
-        public bool StringBelongToLanguage(string inputString)
-        {
-            HashSet<char> currentStates = new HashSet<char>();
-            currentStates.Add(q0);
+### Objectives
+1. Implement conversion of a finite automaton to a regular grammar.
+2. Determine whether the finite automaton is deterministic or non-deterministic.
+3. Implement functionality to convert a non-deterministic finite automaton to a deterministic one.
 
-            foreach (char symbol in inputString)
-            {
-                // Check if the symbol belongs to the alphabet
-                if (!Sigma.Contains(symbol))
-                {
-                    // Symbol not in alphabet
-                    return false;
-                }
+### Implementation Description
+- The project includes classes for Grammar, FiniteAutomaton, and a Program class for demonstration.
+- The Grammar class provides methods to generate strings, determine grammar type, and convert to a finite automaton.
+- The FiniteAutomaton class represents a finite automaton and provides methods for string recognition, conversion to a regular grammar, and determination of determinism.
+- The Program class demonstrates the usage of the implemented functionality with sample input.
 
-                HashSet<char> nextStates = new HashSet<char>();
-
-                foreach (char state in currentStates)
-                {
-                    // Check if there exists a transition for the current state and symbol
-                    if (delta.ContainsKey((state, symbol)))
-                    {
-                        // Transition exists, add next states
-                        nextStates.UnionWith(delta[(state, symbol)]);
-                    }
-                }
-
-                if (nextStates.Count == 0)
-                {
-                    // No transition for this symbol, string does not belong to language
-                    return false;
-                }
-
-                currentStates = nextStates;
-            }
-
-            // Check if at least one of the final states is an accepting state
-            return currentStates.Any(s => F.Contains(s));
-        }
-
-        public Grammar ToRegularGrammar()
+### Code Snippets
+```csharp
+// Convert finite automaton to regular grammar
+public Grammar ToRegularGrammar()
         {
             HashSet<char> vn = new HashSet<char>(Q); // Non-terminals
             HashSet<char> vt = new HashSet<char>(Sigma); // Terminals
@@ -86,8 +47,10 @@ namespace LFA_lab2
 
             return new Grammar(vn, vt, p, s);
         }
-
-        public bool IsDeterministic()
+```
+```csharp
+// Determine whether the finite automaton is deterministic
+public bool IsDeterministic()
         {
             foreach (var state in Q)
             {
@@ -101,8 +64,10 @@ namespace LFA_lab2
             }
             return true; // Deterministic
         }
-
-        public FiniteAutomaton ConvertToDFA()
+```
+```csharp
+// Convert NFA to DFA
+public FiniteAutomaton ConvertToDFA()
         {
             var dStates = new Dictionary<string, HashSet<char>>(); // Новые состояния ДКА
             var dStateQueue = new Queue<string>(); // Очередь для обработки состояний
@@ -138,7 +103,7 @@ namespace LFA_lab2
                     }
 
                     // Обновляем dDelta для текущего символа и состояния
-                    dDelta[(currentState.Min(), symbol)] = nextStateSet;
+                    dDelta[(currentState[0], symbol)] = new HashSet<char>(nextStateId);
                 }
             }
 
@@ -148,33 +113,10 @@ namespace LFA_lab2
 
             return new FiniteAutomaton(newQ, Sigma, dDelta, initialState[0], newF);
         }
-        
+```
 
+### Conclusions / Results
+- The project successfully achieves the objectives of converting finite automata to regular grammars, determining determinism, and converting NFAs to DFAs.
+- It provides a robust framework for language recognition and conversion between different formal language representations.
 
-        // Helper method to compute epsilon closure of a set of states
-        private HashSet<char> EpsilonClosure(HashSet<char> states)
-        {
-            HashSet<char> closure = new HashSet<char>(states);
-            Stack<char> stack = new Stack<char>(states);
-
-            while (stack.Count > 0)
-            {
-                char currentState = stack.Pop();
-                if (delta.ContainsKey((currentState, '~'))) // Assuming '~' represents epsilon transition
-                {
-                    foreach (char nextState in delta[(currentState, '~')])
-                    {
-                        if (!closure.Contains(nextState))
-                        {
-                            closure.Add(nextState);
-                            stack.Push(nextState);
-                        }
-                    }
-                }
-            }
-
-            return closure;
-        }
-
-    }
-}
+This README provides an overview of the project, its objectives, implementation details, and usage instructions.

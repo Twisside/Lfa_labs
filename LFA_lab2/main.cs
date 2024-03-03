@@ -27,14 +27,14 @@ namespace LFA_lab2
             // a. Convert finite automaton to regular grammar
             Grammar regularGrammar = finiteAutomaton.ToRegularGrammar();
             Console.WriteLine("Regular Grammar from Finite Automaton:");
-            Console.WriteLine("VN: " + string.Join(", ", regularGrammar.getP().Keys));
-            Console.WriteLine("VT: " + string.Join(", ", regularGrammar.getVT()));
+            Console.WriteLine("VN: " + string.Join(", ", regularGrammar.P.Keys));
+            Console.WriteLine("VT: " + string.Join(", ", regularGrammar.VT));
             Console.WriteLine("Productions:");
-            foreach (var entry in regularGrammar.getP())
+            foreach (var entry in regularGrammar.P)
             {
                 Console.WriteLine(entry.Key + " -> " + string.Join(" | ", entry.Value));
             }
-            Console.WriteLine("Start symbol: " + regularGrammar.getS());
+            Console.WriteLine("Start symbol: " + regularGrammar.S);
 
             // b. Determine whether the finite automaton is deterministic or non-deterministic
             bool isDeterministic = finiteAutomaton.IsDeterministic();
@@ -45,15 +45,15 @@ namespace LFA_lab2
             {
                 FiniteAutomaton dfa = finiteAutomaton.ConvertToDFA();
                 Console.WriteLine("\nDFA Converted from NFA:");
-                Console.WriteLine("Q: " + string.Join(", ", dfa.getQ()));
-                Console.WriteLine("Sigma: " + string.Join(", ", dfa.getSigma()));
+                Console.WriteLine("Q: " + string.Join(", ", dfa.Q));
+                Console.WriteLine("Sigma: " + string.Join(", ", dfa.Sigma));
                 Console.WriteLine("Delta: ");
-                foreach (var transition in dfa.getDelta())
+                foreach (var transition in dfa.delta)
                 {
                     Console.WriteLine("(" + transition.Key.Item1 + ", " + transition.Key.Item2 + ") -> " + string.Join(", ", transition.Value));
                 }
-                Console.WriteLine("q0: " + dfa.getq0());
-                Console.WriteLine("F: " + string.Join(", ", dfa.getF()));
+                Console.WriteLine("q0: " + dfa.q0);
+                Console.WriteLine("F: " + string.Join(", ", dfa.F));
             }
             else
             {

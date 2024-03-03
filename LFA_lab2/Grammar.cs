@@ -6,28 +6,11 @@ namespace LFA_lab2;
 
 public class Grammar
 {
-    private HashSet<char> VN;
-    private HashSet<char> VT;
-    private Dictionary<char, List<string>> P;
-    private char S;
-
-    public char getS()
-    {
-        return S;
-    }
-    public Dictionary<char, List<string>> getP()
-    {
-        return P;
-    }
+    private HashSet<char> VN { get; set; }
+    public HashSet<char> VT { get; set; }
+    public Dictionary<char, List<string>> P { get; set; }
+    public char S { get; set; }
     
-    public HashSet<char> getVN()
-    {
-        return VN;
-    }
-    public HashSet<char> getVT()
-    {
-        return VT;
-    }
 
     public Grammar(HashSet<char> vn, HashSet<char> vt, Dictionary<char, List<string>> p, char s)
     {
