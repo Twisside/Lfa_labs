@@ -103,51 +103,76 @@ namespace LFA_lab2
         }
 
         public FiniteAutomaton ConvertToDFA()
+{
+    var dStates = new Dictionary<string, HashSet<char>>(); // New DFA states
+    var dStateQueue = new Queue<string>(); // Queue for processing states
+    var dDelta = new Dictionary<(char, char), HashSet<char>>(); // DFA transitions
+    var initialState = new string(new[] { q0 }); // Initial state of DFA
+    dStates[initialState] = new HashSet<char> { q0 };
+    dStateQueue.Enqueue(initialState);
+
+    while (dStateQueue.Count > 0)
+    {
+        var currentState = dStateQueue.Dequeue();
+
+        foreach (var symbol in Sigma)
         {
-            var dStates = new Dictionary<string, HashSet<char>>(); // Новые состояния ДКА
-            var dStateQueue = new Queue<string>(); // Очередь для обработки состояний
-            var dDelta = new Dictionary<(char, char), HashSet<char>>(); // Транзиции ДКА
-            var initialState = new string(new[] { q0 }); // Начальное состояние ДКА
-            dStates[initialState] = new HashSet<char> { q0 };
-            dStateQueue.Enqueue(initialState);
+            var nextStateSet = new HashSet<char>();
 
-            while (dStateQueue.Count > 0)
+            foreach (var state in dStates[currentState])
             {
-                var currentState = dStateQueue.Dequeue();
-
-                foreach (var symbol in Sigma)
+                if (delta.ContainsKey((state, symbol)))
                 {
-                    var nextStateSet = new HashSet<char>();
+                    nextStateSet.UnionWith(delta[(state, symbol)]);
+                }
 
-                    foreach (var state in dStates[currentState])
-                    {
-                        if (delta.ContainsKey((state, symbol)))
-                        {
-                            nextStateSet.UnionWith(delta[(state, symbol)]);
-                        }
+                // Add epsilon closure if there are epsilon transitions
+                nextStateSet.UnionWith(EpsilonClosure(nextStateSet));
+            }
 
-                        // Добавляем эпсилон-замыкание, если есть эпсилон-переходы
-                        nextStateSet = EpsilonClosure(nextStateSet);
-                    }
+            var nextStateId = new string(nextStateSet.ToArray());
+            if (!dStates.ContainsKey(nextStateId))
+            {
+                dStates[nextStateId] = nextStateSet;
+                dStateQueue.Enqueue(nextStateId);
+            }
+        }
+    }
 
-                    var nextStateId = new string(nextStateSet.ToArray());
-                    if (!dStates.ContainsKey(nextStateId))
-                    {
-                        dStates[nextStateId] = nextStateSet;
-                        dStateQueue.Enqueue(nextStateId);
-                    }
-
-                    // Обновляем dDelta для текущего символа и состояния
-                    dDelta[(currentState.Min(), symbol)] = nextStateSet;
+    // Construct DFA transitions
+    foreach (var kvp in dStates)
+    {
+        var currentState = kvp.Key;
+        foreach (var symbol in Sigma)
+        {
+            var nextStates = new HashSet<char>();
+            foreach (var state in kvp.Value)
+            {
+                if (delta.ContainsKey((state, symbol)))
+                {
+                    nextStates.UnionWith(delta[(state, symbol)]);
                 }
             }
 
-            // Создаем новый DFA с использованием dStates и dDelta
-            var newQ = new HashSet<char>(dStates.Keys.SelectMany(id => id).Distinct());
-            var newF = new HashSet<char>(dStates.Where(kvp => kvp.Value.Any(s => F.Contains(s))).Select(kvp => kvp.Key[0]));
+            // If no next state is found, continue to the next symbol
+            if (nextStates.Count == 0)
+                continue;
 
-            return new FiniteAutomaton(newQ, Sigma, dDelta, initialState[0], newF);
+            // Find the ID for the next state set
+            var nextStateId = dStates.First(kvp2 => kvp2.Value.SetEquals(nextStates)).Key;
+
+            // Add the transition to dDelta
+            dDelta[(currentState.Min(), symbol)] = new HashSet<char>(nextStateId);
         }
+    }
+
+    // Create a new DFA using dStates and dDelta
+    var newQ = new HashSet<char>(dStates.Keys.SelectMany(id => id).Distinct());
+    var newF = new HashSet<char>(dStates.Where(kvp => kvp.Value.Any(s => F.Contains(s))).Select(kvp => kvp.Key[0]));
+
+    return new FiniteAutomaton(newQ, Sigma, dDelta, initialState[0], newF);
+}
+
         
 
 

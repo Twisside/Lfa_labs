@@ -6,7 +6,7 @@ namespace LFA_lab2;
 
 public class Grammar
 {
-    private HashSet<char> VN { get; set; }
+    public HashSet<char> VN { get; set; }
     public HashSet<char> VT { get; set; }
     public Dictionary<char, List<string>> P { get; set; }
     public char S { get; set; }

@@ -27,7 +27,7 @@ namespace LFA_lab2
             // a. Convert finite automaton to regular grammar
             Grammar regularGrammar = finiteAutomaton.ToRegularGrammar();
             Console.WriteLine("Regular Grammar from Finite Automaton:");
-            Console.WriteLine("VN: " + string.Join(", ", regularGrammar.P.Keys));
+            Console.WriteLine("VN: " + string.Join(", ", regularGrammar.VN));
             Console.WriteLine("VT: " + string.Join(", ", regularGrammar.VT));
             Console.WriteLine("Productions:");
             foreach (var entry in regularGrammar.P)
