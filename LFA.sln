@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFA_lab2", "LFA_lab2\LFA_la
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFA_lab3", "LFA_lab3\LFA_lab3.csproj", "{22CA3731-4EDE-4C80-A6BB-9844627443A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFA_lab4", "LFA_lab4\LFA_lab4.csproj", "{2F29F1AE-353A-4DF7-A4EF-B34F7C672EEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{22CA3731-4EDE-4C80-A6BB-9844627443A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22CA3731-4EDE-4C80-A6BB-9844627443A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22CA3731-4EDE-4C80-A6BB-9844627443A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F29F1AE-353A-4DF7-A4EF-B34F7C672EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F29F1AE-353A-4DF7-A4EF-B34F7C672EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F29F1AE-353A-4DF7-A4EF-B34F7C672EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F29F1AE-353A-4DF7-A4EF-B34F7C672EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
