@@ -18,7 +18,7 @@ A regular expression is a sequence of characters that specifies a match pattern 
 1. Using Fare library
 
 The Fare library has the thing i was trying to implement, that being the xeger, the opposite of a regex. If the Regex class just checks if a string is a match for the given regex, well xeger generates that string for the regex. There where no limitations for using external libraries sooo, yeah.
-
+As you can see in the second regular expression i used 'OOO' instead of 'O^3', because the xeger and the regex libraries do not support this kind of syntax, so the specific number of elements needs to be typed manually.
 ```csharp
 static void Main(string[] args)
     {
