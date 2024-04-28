@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Tqhx/0uwwEcB9Idntp3zzKJlpxMsxRYvnl/qgQxZYY4Bob9T7GNsifuLLHhIN6nLvrxApeZTw0nqCt52MqMeKg==",
+  "dgSpecHash": "SBiPXC7bNtEcEaNgFIpjkANWTaPCQJ6Kvb3Nj66vd2sCZtlD6zt9haln8YCZKtXIDAAE10GlE1pdSt2uCU7e5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\TwisSide\\OneDrive - Technical University of Moldova\\LFA\\LFA\\LFA_lab5\\LFA_lab5.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\TwisSide\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\TwisSide\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\TwisSide\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\TwisSide\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.18\\microsoft.netcore.app.host.win-x64.7.0.18.nupkg.sha512"
+  ],
   "logs": []
 }
