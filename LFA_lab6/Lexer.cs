@@ -65,4 +65,16 @@ public class Lexer
 
         return _tokens;
     }
+
+    public Token GetNextToken()
+    {
+        if (_position < _tokens.Count)
+        {
+            return _tokens[_position++];
+        }
+        else
+        {
+            return new Token(TokenType.Unknown, "");
+        }
+    }
 }
