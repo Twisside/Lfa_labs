@@ -1,0 +1,12 @@
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\bin\Debug\net8.0\LFA_lab6.deps.json
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\bin\Debug\net8.0\LFA_lab6.dll
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\bin\Debug\net8.0\LFA_lab6.pdb
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.AssemblyInfoInputs.cache
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.AssemblyInfo.cs
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.csproj.CoreCompileInputs.cache
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.sourcelink.json
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.dll
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\refint\LFA_lab6.dll
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\LFA_lab6.pdb
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab6\obj\Debug\net8.0\ref\LFA_lab6.dll

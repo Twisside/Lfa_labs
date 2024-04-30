@@ -12,4 +12,4 @@ C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab5\ob
 C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab5\obj\Debug\net7.0\LFA_lab5.pdb
 C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab5\obj\Debug\net7.0\LFA_lab5.genruntimeconfig.cache
 C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab5\obj\Debug\net7.0\ref\LFA_lab5.dll
-C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab5\obj\Debug\net7.0\LFA_lab5.sourcelink.json
+C:\Users\TwisSide\OneDrive - Technical University of Moldova\LFA\LFA\LFA_lab5\obj\Debug\net7.0\LFA_lab5.csproj.AssemblyReference.cache
